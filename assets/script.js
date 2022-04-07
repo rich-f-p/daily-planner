@@ -1,4 +1,4 @@
-// GIVEN I am using a daily planner to create a schedule
+
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
 function displayTime(){
@@ -18,6 +18,29 @@ function clock(){
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
+function color(){
+    $('textarea').each(function(){
+        var blockTime= $(this).attr('data');
+        var timeHour= moment().format('h');
+        if (timeHour>blockTime){
+            $(this).removeClass('present')
+            $(this).removeClass('future')
+            $(this).addClass('past')
+        }else if (timeHour<blockTime){
+            $(this).removeClass('present')
+            $(this).addClass('future')
+            $(this).removeClass('past')
+        }else if(time == blockTime){
+            $(this).addClass('present')
+            $(this).removeClass('future')
+            $(this).removeClass('past')
+        }
+    })
+}
+// if  (time>blockTime)
+
+    // (.present)
+    // (.future)
 // WHEN I click into a timeblock
 // THEN I can enter an event
 
@@ -27,3 +50,5 @@ function clock(){
 // WHEN I refresh the page
 // THEN the saved events persist
 clock();
+color();
+/* how to generate time blocks in js */
