@@ -21,7 +21,7 @@ function clock(){
 function color(){
     $('textarea').each(function(){
         var blockTime= $(this).attr('data');
-        var timeHour= moment().format('h');
+        var timeHour= moment().format('H'); 
         if (timeHour>blockTime){
             $(this).removeClass('present')
             $(this).removeClass('future')
@@ -30,7 +30,7 @@ function color(){
             $(this).removeClass('present')
             $(this).addClass('future')
             $(this).removeClass('past')
-        }else if(time == blockTime){
+        }else {
             $(this).addClass('present')
             $(this).removeClass('future')
             $(this).removeClass('past')
