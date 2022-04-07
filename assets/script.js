@@ -5,6 +5,13 @@ function displayTime(){
     time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
     $('#currentDay').text(time);
 }
+function clock(){
+    displayTime();
+    setInterval(function(){
+        displayTime();
+
+    }, 1000)
+}
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
 
@@ -19,4 +26,4 @@ function displayTime(){
 
 // WHEN I refresh the page
 // THEN the saved events persist
-displayTime();
+clock();
