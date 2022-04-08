@@ -53,6 +53,7 @@ function refresh(){
         $(this).val(localStorage.getItem($(this).attr('data')));
       });
 }
+//start everthing
 clock();
 color();
 refresh();
