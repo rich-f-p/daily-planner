@@ -37,15 +37,22 @@ function color(){
         }
     })
 }
-// if  (time>blockTime)
-
-    // (.present)
-    // (.future)
 // WHEN I click into a timeblock
 // THEN I can enter an event
 
 // WHEN I click the save button for that timeblock
 // THEN the text for that event is saved in local storage
+$('.saveBtn').on('click',function(){
+        var timeOfEvent = $('textarea').attr("data");
+        console.log(timeOfEvent)
+        var perform = $('textarea').val();
+        console.log(perform)
+        function save(){
+            localStorage.setItem(timeOfEvent, perform);
+        }
+        save();
+})
+
 
 // WHEN I refresh the page
 // THEN the saved events persist
