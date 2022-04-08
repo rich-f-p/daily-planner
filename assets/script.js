@@ -43,9 +43,9 @@ function color(){
 // WHEN I click the save button for that timeblock
 // THEN the text for that event is saved in local storage
 $('.saveBtn').on('click',function(){
-        var timeOfEvent = $('textarea').attr("data");
+        var timeOfEvent = $(this).siblings('.description').attr("data");
         console.log(timeOfEvent)
-        var perform = $('textarea').val();
+        var perform = $(this).siblings('.description').val();
         console.log(perform)
         function save(){
             localStorage.setItem(timeOfEvent, perform);
