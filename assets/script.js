@@ -16,7 +16,7 @@ function clock(){
 function color(){
     $('textarea').each(function(){
         var blockTime = parseInt($(this).attr('data'));
-        var timeHour =  moment().format('H');  
+        var timeHour = moment().format('H');  
         console.log(blockTime)
         console.log(timeHour)
         if (timeHour>blockTime){
